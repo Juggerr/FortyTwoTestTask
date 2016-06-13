@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div id="main-form">
+    <div id="form-title">42 Coffee Cups Test Assignment</div>
+    <div id="left-side">
+      {% if personal_info %}
+        <div>
+          <label>Name:</label>
+          <span>{{ personal_info.name }}</span>
+        </div>
+        <div>
+          <label>Last name:</label>
+          <span>{{ personal_info.last_name }}</span>
+        </div>
+        <div>
+          <label>Date of birth:</label>
+          <span>{{ personal_info.birth_date }}</span>
+        </div>
+        <div>
+          <label>Bio:</label>
+          <span>
+            {{ personal_info.bio|safe }}
+          </span>
+        </div>
+      </div>
+      <div id="right-side">
+        <div>
+          <label>Contacts:</label>
+          <span>
+            {{ personal_info.contacts|safe }}
+          </span>
+        </div>
+        <div>
+          <label>Email:</label>
+          <span>{{ personal_info.email }}</span>
+        </div>
+        <div>
+          <label>Jabber:</label>
+          <span>{{ personal_info.jabber }}</span>
+        </div>
+        <div>
+          <label>Skype:</label>
+          <span>{{ personal_info.skype }}</span>
+        </div>
+        <div>
+          <label>Other contacts:</label>
+          <span>{{ personal_info.other }}</span>
+        </div>
+      {% else %}
+        There is no data yet
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}
